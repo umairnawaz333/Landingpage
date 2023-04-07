@@ -7,7 +7,6 @@ import Header from '../components/Header';
 import NewsletterSection from '../components/NewsletterSection';
 import ServicesSection from '../components/services/ServicesSection';
 import TeamSection from '../components/team/TeamSection';
-import RoadmapSection from '../components/roadmap/RoadmapSection';
 
 function LandingPage() {
   return (
@@ -16,9 +15,8 @@ function LandingPage() {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
-      <RoadmapSection />
-      <NewsletterSection />
       <TeamSection />
+      <NewsletterSection />
       <ContactSection />
       <Footer />
     </>

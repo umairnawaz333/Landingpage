@@ -1,35 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
+import PrimaryButton from './buttons/PrimaryButton';
+import ParagraphText from './paragraphTexts/ParagraphText';
 import SectionTitle from './titles/SectionTitle';
-
-import Img5 from '../assets/images/5.png';
-import Img6 from '../assets/images/6.png';
-import Img7 from '../assets/images/7.png';
-import Img8 from '../assets/images/8.png';
-import Img9 from '../assets/images/9.png';
-import Img11 from '../assets/images/11.png';
+import AboutImg from '../assets/images/about.png';
 
 const AboutStyles = styled.div`
   padding: 10rem 0;
-  text-align: center;
-  .services__title {
-    margin-bottom: 3rem;
-  }
   .about__wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .about__img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    img {
-      max-width: 340px;
-      border: 1px solid var(--mediumSlateBlue);
-      border-radius: 5px;
-    }
   }
   .about__subtitle {
     margin-bottom: 1rem;
@@ -50,27 +32,33 @@ const AboutStyles = styled.div`
       flex-direction: column;
     }
     .about__img {
-      max-width: 320px;
-      img {
-        max-width: 320px;
-      }
+      max-width: 400px;
     }
   }
 `;
 
 function AboutSection() {
   return (
-    <AboutStyles id="nfts">
+    <AboutStyles id="about">
       <div className="container">
-        <SectionTitle className="services__title">NFTs</SectionTitle>
         <div className="about__wrapper">
           <div className="about__img">
-            <img src={Img5} alt="" />
-            <img src={Img6} alt="" />
-            <img src={Img7} alt="" />
-            <img src={Img8} alt="" />
-            <img src={Img9} alt="" />
-            <img src={Img11} alt="" />
+            <img src={AboutImg} alt="Artistic" />
+          </div>
+          <div className="about__info">
+            <ParagraphText className="about__subtitle">
+              Who are we
+            </ParagraphText>
+            <SectionTitle className="about__title">
+              Capturing life as it happens
+            </SectionTitle>
+            <ParagraphText className="about__desc">
+              “Artistic” is a studio of some passionate photographer. Our Goal
+              is to capture your experience.
+            </ParagraphText>
+            <PrimaryButton buttonType={Link} to="contact" smooth>
+              Get In Touch
+            </PrimaryButton>
           </div>
         </div>
       </div>

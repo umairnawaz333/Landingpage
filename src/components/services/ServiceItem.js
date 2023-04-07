@@ -7,7 +7,6 @@ const ServiceItemStyles = styled.div`
   text-align: left;
   padding: 3rem;
   border-radius: 12px;
-  border: 1px solid var(--mediumSlateBlue);
   .service__icon {
     font-size: 2rem;
     margin-bottom: 1rem;
@@ -33,7 +32,21 @@ const ServiceItemStyles = styled.div`
     color: ${({ theme: { theme } }) =>
       theme === themeList.light ? 'var(--darkBlue_2)' : 'var(--lightBlue_1)'};
   }
+  &:hover {
+    background-color: var(--mediumSlateBlue);
+    .service__icon {
+      background-color: var(--lightBlue_1);
+      color: var(--mediumSlateBlue);
+    }
+    .service__title {
+      color: var(--lightBlue_1);
+    }
+    .service__desc {
+      color: var(--lightBlue_1);
+    }
+  }
   @media only screen and (max-width: 768px) {
+    background-color: var(--mediumSlateBlue);
     .service__icon {
       background-color: var(--lightBlue_1);
       color: var(--mediumSlateBlue);
@@ -51,9 +64,11 @@ const ServiceItemStyles = styled.div`
   }
 `;
 
-function ServiceItem({ desc }) {
+function ServiceItem({ icon, title, desc }) {
   return (
     <ServiceItemStyles>
+      <div className="service__icon">{icon}</div>
+      <div className="service__title">{title}</div>
       <ParagraphText className="service__desc">{desc}</ParagraphText>
     </ServiceItemStyles>
   );

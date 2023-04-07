@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { RiImageEditLine, RiHeartsFill } from 'react-icons/ri';
+import { MdPhotoCamera } from 'react-icons/md';
 import SectionTitle from '../titles/SectionTitle';
 import ServiceItem from './ServiceItem';
 
@@ -24,16 +26,25 @@ const ServicesSectionStyles = styled.div`
 
 function ServicesSection() {
   return (
-    <ServicesSectionStyles id="utility">
+    <ServicesSectionStyles id="services">
       <div className="container">
-        <SectionTitle className="services__title">
-          Utility Of ZkFox Nfts Holders
-        </SectionTitle>
+        <SectionTitle className="services__title">Our Services</SectionTitle>
         <div className="services__items">
-          <ServiceItem desc="Users Can Stake Our $ZFox & NFTs." />
-          <ServiceItem desc="Anyone Can Holds Our Nfts And Get Rewards In Our Tokens." />
-          <ServiceItem desc="Users Can Able To Buy Our NFTs Using $ZFox Token." />
-          <ServiceItem desc="Those who holds our most Nfts & Tokens They will get the rarest Nfts." />
+          <ServiceItem
+            icon={<RiImageEditLine />}
+            title="Professional Editing"
+            desc="We do professional photo editing. Let us help you to take your photo next level."
+          />
+          <ServiceItem
+            icon={<MdPhotoCamera />}
+            title="Casual Photography"
+            desc="You can hire us for any kind of casual Photography. Book us for your next events. "
+          />
+          <ServiceItem
+            icon={<RiHeartsFill />}
+            title="Wedding Photography"
+            desc="Wedding is the most memorable events of our life. Let us help you to capture it."
+          />
         </div>
       </div>
     </ServicesSectionStyles>

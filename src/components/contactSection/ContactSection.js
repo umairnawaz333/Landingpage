@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Faq from 'react-faq-component';
+import PrimaryButton from '../buttons/PrimaryButton';
+import ParagraphText from '../paragraphTexts/ParagraphText';
 import SectionTitle from '../titles/SectionTitle';
+import FormField from './FormField';
 
 const ContactSectionStyles = styled.div`
   padding: 10rem 0;
@@ -38,53 +40,52 @@ const ContactSectionStyles = styled.div`
 `;
 
 function ContactSection() {
-  const data = {
-    title: '',
-    rows: [
-      {
-        title: 'What Is ZkFox?',
-        content:
-          'ZkFox Is The First Collection Of 9,999 NFTs Art Produced on ZKSYNC Era. it Will Offers To Create Own Free NFTs in 2D, 3D Without Layers & Accessories.',
-      },
-      {
-        title: 'How Many Collection Have ZkFox?',
-        content: '9,999 Collection Of ZkFox.',
-      },
-      {
-        title: 'What Is Minting Price?',
-        content: 'ZkFox Nfts Are Free Minting To Anyone.',
-      },
-      {
-        title: 'When ZkFox Minting?',
-        content: 'Will Be Announce On Our Official Social Media Platform.',
-      },
-      {
-        title: 'When Minting date?',
-        content: 'Will be announce Soon.',
-      },
-    ],
-  };
-  const styles = {
-    bgColor: '#00000000',
-    titleTextColor: 'white',
-    rowTitleColor: 'white',
-    rowContentColor: 'white',
-    arrowColor: 'white',
-
-    rowTitleTextSize: 'large',
-    rowContentPaddingTop: '10px',
-    rowContentPaddingBottom: '5px',
-  };
-
   return (
-    <ContactSectionStyles id="faqs">
+    <ContactSectionStyles id="contact">
       <div className="container">
         <div className="contact__wrapper">
           <div className="contact__info">
-            <SectionTitle>FAQs</SectionTitle>
-            {/* <ParagraphText>We would love to hear from you.</ParagraphText> */}
+            <SectionTitle>Get In Touch</SectionTitle>
+            <ParagraphText>We would love to hear from you.</ParagraphText>
           </div>
-          <Faq data={data} styles={styles} />
+          <form className="contact__form">
+            <FormField
+              className="contact__field--fullWidth"
+              type="text"
+              label="name"
+              name="name"
+              id="name"
+              required
+            />
+            <FormField
+              type="email"
+              label="Email"
+              name="email"
+              id="email"
+              required
+            />
+            <FormField
+              type="text"
+              label="Subject"
+              name="subject"
+              id="subject"
+              required
+            />
+            <FormField
+              className="contact__field--fullWidth"
+              label="Message"
+              name="message"
+              id="message"
+              rows="6"
+            />
+            <PrimaryButton
+              type="submit"
+              buttonType="button"
+              className="contact__submit"
+            >
+              Submit
+            </PrimaryButton>
+          </form>
         </div>
       </div>
     </ContactSectionStyles>

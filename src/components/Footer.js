@@ -2,10 +2,11 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import styled from 'styled-components';
 import Logo from './Logo';
+import ParagraphText from './paragraphTexts/ParagraphText';
 
 const FooterStyles = styled.footer`
   background-color: var(--darkBlue_4);
-  padding: 2rem 0;
+  padding: 10rem 0;
   .footer__wrapper {
     text-align: center;
   }
@@ -59,7 +60,7 @@ function Footer() {
           <Link to="home" smooth>
             <Logo className="footer__logo" />
           </Link>
-          {/* <ParagraphText className="footer__desc">
+          <ParagraphText className="footer__desc">
             “Artistic” is a studio of some passionate photographer. Our Goal is
             to capture your experience.
           </ParagraphText>
@@ -89,7 +90,7 @@ function Footer() {
           </div>
           <ParagraphText className="footer__copyright">
             © Artistic Creative {new Date().getFullYear()}. All rights reserved
-          </ParagraphText> */}
+          </ParagraphText>
         </div>
       </div>
     </FooterStyles>

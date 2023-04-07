@@ -2,7 +2,7 @@ import { createContext, useReducer } from 'react';
 import themeList from '../data/themeList';
 
 const ThemeContext = createContext();
-// const lightTheme = themeList.light;
+const lightTheme = themeList.light;
 const darkTheme = themeList.dark;
 
 const themeReducer = (state, action) => {
@@ -10,12 +10,10 @@ const themeReducer = (state, action) => {
     case 'TOGGLE_THEME':
       localStorage.setItem(
         'theme',
-        darkTheme
-        // state.theme === lightTheme ? darkTheme : lightTheme
+        state.theme === lightTheme ? darkTheme : lightTheme
       );
       return {
-        theme: darkTheme,
-        // state.theme === darkTheme ? lightTheme : darkTheme,
+        theme: state.theme === darkTheme ? lightTheme : darkTheme,
       };
     default:
       return state;
@@ -29,13 +27,13 @@ const ThemeContextProvider = ({ children }) => {
       window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (theme) {
-      return darkTheme;
+      return theme;
     }
     if (!theme) {
       if (prefersDark) {
         return darkTheme;
       }
-      return darkTheme;
+      return lightTheme;
     }
   };
 

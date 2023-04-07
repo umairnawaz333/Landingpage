@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import ParagraphText from '../paragraphTexts/ParagraphText';
 import SectionTitle from '../titles/SectionTitle';
 import TeamMemberItem from './TeamMemberItem';
 // team member images
+import teamMember1 from '../../assets/images/team1.png';
 import teamMember2 from '../../assets/images/team2.png';
+import teamMember3 from '../../assets/images/team3.png';
 
 const TeamSectionStyles = styled.div`
   padding: 10rem 0;
@@ -44,29 +47,33 @@ const TeamSectionStyles = styled.div`
 
 function TeamSection() {
   return (
-    <TeamSectionStyles id="team">
+    <TeamSectionStyles>
       <div className="container">
         <div className="team__wrapper">
           <div className="team__info">
-            <SectionTitle className="team__title">ZkFox Team</SectionTitle>
+            <ParagraphText className="team__subtitle">
+              Team Members
+            </ParagraphText>
+            <SectionTitle className="team__title">
+              The best team available
+            </SectionTitle>
           </div>
           <div className="team__members">
             <TeamMemberItem
-              img={teamMember2}
-              name="Jiang Sun"
-              title="CEO - CO-Founder"
+              img={teamMember1}
+              name="Rasu"
+              title="Photo Editor"
             />
             <TeamMemberItem
               img={teamMember2}
-              name="Heng Tao Sun"
-              title="NFTs Artist"
+              name="Shaif Arfan"
+              title="Photographer"
             />
             <TeamMemberItem
-              img={teamMember2}
-              name="Gouffy Chenzao"
-              title="CM"
+              img={teamMember3}
+              name="Ayan Bilai"
+              title="Photographer"
             />
-            <TeamMemberItem img={teamMember2} name="Lious Di Sou" title="CMO" />
           </div>
         </div>
       </div>

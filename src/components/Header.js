@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Link } from 'react-scroll';
 import themeList from '../data/themeList';
 import Logo from './Logo';
+import ThemeSwitcher from './ThemeSwitcher';
 
 const HeaderStyles = styled.header`
   position: fixed;
@@ -14,7 +15,6 @@ const HeaderStyles = styled.header`
   background-color: ${({ theme: { theme } }) =>
     theme === themeList.light ? 'var(--lightBlue_1)' : 'var(--darkBlue_3)'};
   border-bottom: 1px solid var(--mediumSlateBlue);
-
   .navigation {
     display: flex;
     align-items: center;
@@ -148,7 +148,7 @@ export default function Header() {
     window.addEventListener('scroll', () => {
       if (headerRef.current && window.scrollY > 100) {
         headerRef.current.style.boxShadow =
-          '0px 5px 10px 0px var(--mediumSlateBlue)';
+          '0px 0px 10px 0px rgba(0, 0, 0, 0.5)';
       } else {
         headerRef.current.style.boxShadow = 'none';
       }
@@ -182,33 +182,18 @@ export default function Header() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="utility" smooth activeClass="active" spy>
-                    Utility
+                  <Link to="services" smooth activeClass="active" spy>
+                    Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="nfts" smooth activeClass="active" spy>
-                    NFTs
+                  <Link to="about" smooth activeClass="active" spy>
+                    About
                   </Link>
                 </li>
                 <li>
-                  <Link to="roadmap" smooth activeClass="active" spy>
-                    Road map
-                  </Link>
-                </li>
-                <li>
-                  <Link to="tokenomics" smooth activeClass="active" spy>
-                    Tokenomics
-                  </Link>
-                </li>
-                <li>
-                  <Link to="team" smooth activeClass="active" spy>
-                    Team
-                  </Link>
-                </li>
-                <li>
-                  <Link to="faqs" smooth activeClass="active" spy>
-                    FAQs
+                  <Link to="contact" smooth activeClass="active" spy>
+                    Contact
                   </Link>
                 </li>
               </ul>
@@ -223,7 +208,7 @@ export default function Header() {
                 onClick={() => setIsNavOpen(false)}
               />
             )}
-            {/* <ThemeSwitcher /> */}
+            <ThemeSwitcher />
             {isMobile && (
               <div
                 className="menuIcon"
